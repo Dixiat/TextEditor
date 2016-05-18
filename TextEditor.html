@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>富文本编辑器</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/textEditor.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="textEditor col-md-8">
+            <form role="textEditor" class="form-horizontal">
+                <div class="form-group composing-control">
+                    <label for="title" class="control-label">标题</label>
+                    <input type="text" name="title" class="form-control" id="title" placeholder="请输入文章标题">
+                </div>
+                <div class="form-group composing-control">
+                    <label for="author" class="control-label">作者</label>
+                    <input type="text" name="author" class="form-control" id="author" placeholder="请输入文章作者">
+                </div>
+                <div class="form-group composing-control">
+                    <label for="content">正文</label>
+                    <div class="row toolbar-container">
+                        <div class="col-md-6 toolbar">
+                            <label for="fonts" class="description">字体</label>
+                            <div class="toolbox">
+                                <select class="form-control" id="fonts-select">
+                                    <option value="宋体">宋体</option>
+                                    <option value="微软雅黑">微软雅黑</option>
+                                    <option value="楷体">楷体</option>
+                                    <option value="幼圆">幼圆</option>
+                                    <option value="Arial">Arial</option>
+                                </select>
+                                <select class="form-control" id="fonts-size">
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                </select>
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="text-width" title="字体宽度">
+                                        <span class="icon-text-width"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="text-height" title="字体高度">
+                                        <span class="icon-text-height"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="btn-toolbar toolbox">
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="bold" title="加粗">
+                                        <span class="icon-bold"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="italic" title="斜体">
+                                        <span class="icon-italic"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="underline" title="添加下划线">
+                                        <span class="icon-underline"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="strikeThrough" title="删除标识">
+                                        <span class="icon-strikethrough"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="foreColor" title="字体颜色">
+                                        <span class="glyphicon glyphicon-text-color"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="backColor" title="字体背景">
+                                        <span class="glyphicon glyphicon-text-background"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="superscript" title="上标">
+                                        <span class="glyphicon glyphicon-superscript"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="subscript" title="下标">
+                                        <span class="glyphicon glyphicon-subscript"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 toolbar">
+                            <label for="paragraph" class="description">段落</label>
+                            <div class="btn-toolbar toolbox">
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="outdent" title="向左缩进">
+                                        <span class="glyphicon glyphicon-indent-left"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="indent" title="向右缩进">
+                                        <span class="glyphicon glyphicon-indent-right"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="justifyLeft" title="左对齐">
+                                        <span class="glyphicon glyphicon-align-left"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="justifyCenter" title="居中对齐">
+                                        <span class="glyphicon glyphicon-align-center"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="justifyRight" title="右对齐">
+                                        <span class="glyphicon glyphicon-align-right"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="justifyFull" title="两端对齐">
+                                        <span class="glyphicon glyphicon-align-justify"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="formatBlock" title="格式刷">
+                                        <span class="icon-magic"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="undo" title="撤销">
+                                        <span class="icon-undo"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="redo" title="重复">
+                                        <span class="icon-repeat"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="btn-toolbar toolbox">
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="insertOrderedList" title="有序列表">
+                                        <span class="icon-list-ol"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="insertUnorderedList" title="无序列表">
+                                        <span class="icon-list-ul"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" title="引用">
+                                        <span class="icon-quote-right"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="removeFormat" title="擦除">
+                                        <span class="icon-eraser"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-default" id="insertImage" title="插入图片">
+                                        <span class="icon-picture"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="insertVideo" title="插入视频">
+                                        <span class="icon-film"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" id="createLink" title="插入链接">
+                                        <span class="icon-link"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <article class="form-control" id="content" contenteditable="true" spellcheck="false"></article>
+                    <div class="button">
+                        <button type="button" id="btn-preview" class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span> 预览
+                        </button>
+                        <button type="button" id="btn-close" class="btn btn-default">
+                            <span class="glyphicon glyphicon-remove"></span> 关闭
+                        </button>
+                        <button type="button" id="btn-save" class="btn btn-success">
+                            <span class="glyphicon glyphicon-floppy-disk"></span> 保存
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="textShow col-md-4"></div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/textEditor.js"></script>
+</body>
+
+</html>
